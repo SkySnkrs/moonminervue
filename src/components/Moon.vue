@@ -9,13 +9,28 @@ function mine(){
     minesService.mine(bread)
 }
 
+const message = computed(() => {
+    if (bread.value >= 100000) {
+        return 'HOLY S**T YOU ARE RICH';
+    } else if (bread.value >= 1000) {
+        return 'Maybe You Are Getting Somewhere';
+    } else if (bread.value >= 100) {
+        return 'You Actually Have Something';
+    } else if (bread.value >= 250){
+        return 'Could you be any slower...'
+    } else if (bread.value >= 650){
+        return 'MAN COME ON'
+    } else {
+        return 'BROKIE';
+    }
+});
 </script>
 
 
 <template>
     <section class="row">
         <div class="text-light text-center mt-4">
-        <h2>Click Me To Get Yo Bread Up!</h2>
+        <h2>Click Me To Get Yo Bread<i class="mdi mdi-bread-slice"></i> Up!</h2>
         </div>
         <div class="col-12 text-center my-3">
         <img @click="mine()" src="/src/assets/img/moon.png" alt="Image Of Moon" draggable="false"> 
@@ -24,7 +39,8 @@ function mine(){
 
     <section>
         <div class="text-center text-light">
-        <p>Yo Bread {{ bread }}</p>
+        <p>Yo Bread: <i class="mdi mdi-bread-slice"></i>{{ bread }}</p>
+        <p>{{ message }}</p>
         </div>
     </section>
 </template>
