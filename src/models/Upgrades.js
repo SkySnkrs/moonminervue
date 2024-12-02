@@ -6,5 +6,6 @@ export class Upgrades {
         this.auto = data.auto
         this.strength = data.strength;
         this.quantity = 0;
+        this.costMultiplier = 1.3
     }
 }

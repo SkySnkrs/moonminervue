@@ -44,7 +44,7 @@ function buyUpgrade(id){
             </div>
             <div v-for="upgrade in notAuto" :key="upgrade.name" class="col-md-6">
                 <div class="upgradeCard text-center  align-items-center">
-                    {{ upgrade.name }}, Cost: <i class="mdi mdi-bread-slice"></i> {{ upgrade.cost }}
+                    {{ upgrade.name }}, Level: {{ upgrade.quantity }}, Cost: <i class="mdi mdi-bread-slice"></i> {{ upgrade.cost }}
 
                     <div class="text-end mt-3">
                         <button @click="buyUpgrade(upgrade.id)" class="btn btn-success p-2">
@@ -63,7 +63,7 @@ function buyUpgrade(id){
             </div>
             <div v-for="upgrade in autoUpgrade" :key="upgrade.name" class="col-md-6">
                 <div class="upgradeCard text-center  align-items-center">
-                    {{ upgrade.name }}, Cost: <i class="mdi mdi-bread-slice"></i> {{ upgrade.cost }}
+                    {{ upgrade.name }}, Level: {{ upgrade.quantity }}, Cost: <i class="mdi mdi-bread-slice"></i> {{ upgrade.cost }}
 
                     <div class="text-end mt-3">
                         <button @click="buyUpgrade(upgrade.id)" class="btn btn-success p-2">

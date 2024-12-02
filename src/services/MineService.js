@@ -4,8 +4,7 @@ import { AppState } from "@/AppState.js"
 class MinesService {
 
     
-    mine(bread){
-        bread.value += AppState.click
+    mine(){
         AppState.bread += AppState.click
     }
 }

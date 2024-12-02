@@ -6,7 +6,7 @@ import { computed } from "vue"
 const bread = computed(()=> AppState.bread)
 
 function mine(){
-    minesService.mine(bread)
+    minesService.mine()
 }
 
 const message = computed(() => {

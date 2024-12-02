@@ -13,6 +13,8 @@ class UpgradesService{
                     if (AppState.bread >= upgrade.cost){
                         AppState.bread -= upgrade.cost
                         AppState.click += upgrade.strength
+                        upgrade.cost = Math.ceil(upgrade.cost * upgrade.costMultiplier);
+                        upgrade.quantity ++ 
                     } else{
                         return
                     }
@@ -20,6 +22,8 @@ class UpgradesService{
                     if (AppState.bread >= upgrade.cost){
                         AppState.bread -= upgrade.cost
                         AppState.autoClick += upgrade.strength
+                        upgrade.cost = Math.ceil(upgrade.cost * upgrade.costMultiplier);
+                        upgrade.quantity ++ 
                     } else{
                         return
                     }
