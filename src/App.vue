@@ -3,7 +3,7 @@
 import { computed, ref } from 'vue'
 import { AppState } from './AppState.js'
 
-const cheese = ref(0)
+const bread = ref(0)
 
 </script>
 
@@ -12,10 +12,18 @@ const cheese = ref(0)
 <template>
 <main class="container-fluid">
   <section class="row">
-    <div class="col-12 text-center my-3">
-      <img src="/src/assets/img/moon.png" alt="Image Of Moon"> 
+    <div class="text-light text-center mt-4">
+      <h2>Click Me To Get Yo Bread Up!</h2>
     </div>
-       
+    <div class="col-12 text-center my-3">
+      <img @click="bread++" src="/src/assets/img/moon.png" alt="Image Of Moon" draggable="false"> 
+    </div>
+  </section>
+
+  <section>
+    <div class="text-center text-light">
+      <p>Yo Bread {{ bread }}</p>
+    </div>
   </section>
 </main>
 </template>
@@ -28,7 +36,8 @@ const cheese = ref(0)
 img{
   height: 20em;
   aspect-ratio: 1/1;
-  text-shadow: 2px 2px red;
+  user-select: none;
+  cursor: pointer;
 }
 
 main{
