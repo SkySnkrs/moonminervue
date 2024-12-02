@@ -1,5 +1,6 @@
 <script setup>
 import { AppState } from '@/AppState';
+import { upgradesService } from '@/services/UpgradesService';
 import { computed } from 'vue';
 
 const upgrades = AppState.Upgrades;
@@ -18,6 +19,17 @@ for (let i = 0; i < upgrades.length; i++) {
     }
     
 }
+function autoMine(){
+    upgradesService.autoMine()
+}
+
+setInterval(() => {
+    autoMine();
+}, 3000);
+
+function buyUpgrade(id){
+    upgradesService.buyUpgrade(id)
+}
 </script>
 
 
@@ -35,7 +47,7 @@ for (let i = 0; i < upgrades.length; i++) {
                     {{ upgrade.name }}, Cost: <i class="mdi mdi-bread-slice"></i> {{ upgrade.cost }}
 
                     <div class="text-end mt-3">
-                        <button class="btn btn-success p-2">
+                        <button @click="buyUpgrade(upgrade.id)" class="btn btn-success p-2">
                             Buy <i class="mdi mdi-bread-slice fs-5"></i>{{ upgrade.cost }}
                         </button>
                     </div>
@@ -46,7 +58,7 @@ for (let i = 0; i < upgrades.length; i++) {
             <div class="d-flex justify-content-between align-items-center mb-3">
                 <h4 class="text-start fw-bold mb-0">Auto Bread Getta Upgrades</h4> 
                 <p class="text-end mb-0">
-                    Your Total Auto Bread Getting: {{ autoClick }}
+                    Your Total Auto Bread Getting: {{ autoClick }} / 3s
                 </p>
             </div>
             <div v-for="upgrade in autoUpgrade" :key="upgrade.name" class="col-md-6">
@@ -54,7 +66,7 @@ for (let i = 0; i < upgrades.length; i++) {
                     {{ upgrade.name }}, Cost: <i class="mdi mdi-bread-slice"></i> {{ upgrade.cost }}
 
                     <div class="text-end mt-3">
-                        <button class="btn btn-success p-2">
+                        <button @click="buyUpgrade(upgrade.id)" class="btn btn-success p-2">
                             Buy <i class="mdi mdi-bread-slice fs-5"></i>{{ upgrade.cost }}
                         </button>
                     </div>

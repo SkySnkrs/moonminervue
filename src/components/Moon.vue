@@ -40,7 +40,7 @@ const message = computed(() => {
     <section>
         <div class="text-center text-light">
         <p>Yo Bread: <i class="mdi mdi-bread-slice"></i>{{ bread }}</p>
-        <p>{{ message }}</p>
+        <p class="p-2 fw-bold text-warning">{{ message }}</p>
         </div>
     </section>
 </template>
@@ -49,7 +49,7 @@ const message = computed(() => {
 <style lang="scss" scoped>
 
 img{
-  height: 20em;
+  height: 15em;
   aspect-ratio: 1/1;
   user-select: none;
   cursor: pointer;

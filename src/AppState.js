@@ -10,10 +10,10 @@ export const AppState = reactive({
   bread : 0,
   Upgrades : [
     // id, name, cost
-    new Upgrades({ id: 1, name: 'Bread Slica', cost: 10, auto: false }),
-    new Upgrades({ id: 2, name: 'BREAD AND BUTTER', cost: 100, auto: false }),
-    new Upgrades({ id: 3, name: 'Auto Bread Slica', cost: 1000, auto: true }),
-    new Upgrades({ id: 4, name: 'The Auto Bread Go Getta 1000', cost: 5000, auto: true })
+    new Upgrades({ id: 1, name: 'Bread Slica', cost: 10, auto: false, strength: 5 }),
+    new Upgrades({ id: 2, name: 'BREAD AND BUTTER', cost: 100, auto: false, strength: 25}),
+    new Upgrades({ id: 3, name: 'Auto Bread Slica', cost: 1000, auto: true, strength: 100 }),
+    new Upgrades({ id: 4, name: 'The Auto Bread Go Getta 1000', cost: 5000, auto: true, strength: 1000 })
   ],
   click: 1,
   autoClick : 0
