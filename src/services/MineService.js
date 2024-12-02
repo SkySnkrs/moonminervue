@@ -5,8 +5,8 @@ class MinesService {
 
     
     mine(bread){
-        bread.value++
-        AppState.bread++
+        bread.value += AppState.click
+        AppState.bread += AppState.click
     }
 }
 
